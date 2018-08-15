@@ -10,5 +10,15 @@
       "Spider Sense",
       "Super Strength"
     ]
+  },
+  "batman": {
+    "supername": "Batman",
+    "firstname": "Bruce",
+    "lastname": "Wayne",
+    "description": "He is the dark knight, who glides through Gotham.",
+    "ishero": true,
+    "powers": [
+      "NONE"
+    ]
   }
 }
