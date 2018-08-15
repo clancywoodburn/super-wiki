@@ -8,22 +8,26 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    a: {
-      "spiderman": {
-        "supername": "Spider-Man",
-        "firstname": "Peter",
-        "lastname": "Parker",
-        "description": "This is a description of Spider-Man.",
-        "ishero": true,
-        "powers": [
-          "Wall Crawling",
-          "Spider Sense",
-          "Super Strength"
-        ]
-      }
+url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
+
+
+function getJSON() {
+  var b = [];
+  $.get(url)
+  .done(function( data ) {
+    b.push(JSON.parse(data))
+  });
+  return b
+}
+
+h = getJSON()
+
+$(document).ready(function(){
+  var app = new Vue({
+    el: '#app',
+    data: {
+      a: h[0],
+      word: "spiderman"
     }
-  }
+  });
 });
