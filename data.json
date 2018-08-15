@@ -1,0 +1,14 @@
+{
+  "spiderman": {
+    "supername": "Spider-Man",
+    "firstname": "Peter",
+    "lastname": "Parker",
+    "description": "This is a description of Spider-Man."
+    "ishero": true,
+    "powers": [
+      "Wall Crawling",
+      "Spider Sense",
+      "Super Strength"
+    ]
+  }
+}
