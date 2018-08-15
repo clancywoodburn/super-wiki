@@ -3,7 +3,7 @@
     "supername": "Spider-Man",
     "firstname": "Peter",
     "lastname": "Parker",
-    "description": "This is a description of Spider-Man."
+    "description": "This is a description of Spider-Man.",
     "ishero": true,
     "powers": [
       "Wall Crawling",
