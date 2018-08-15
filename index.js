@@ -1,5 +1,5 @@
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
+function getParameterByName(name) {
+    url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
         results = regex.exec(url);
@@ -8,10 +8,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
+
 
 
 function getJSON() {
+  url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
   var b = [];
   $.get(url)
   .done(function( data ) {
@@ -27,7 +28,7 @@ $(document).ready(function(){
     el: '#app',
     data: {
       a: h[0],
-      word: "spiderman"
+      word: getParameterByName("x")
     }
   });
 });
