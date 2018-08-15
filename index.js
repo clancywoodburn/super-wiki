@@ -8,31 +8,27 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function handle(d) {
+  $(document).ready(function(){
 
-
+    var app = new Vue({
+      el: '#app',
+      data: {
+        a: d[0],
+        word: getParameterByName("x")
+      }
+    });
+  });
+}
 
 function getJSON() {
-  info = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
+  url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
   var b = [];
-  $.ajax({
-    async: false,
-    type: 'GET',
-    url: info,
-    success: function(data) {
-      b.push(JSON.parse(data))
-    }
+  $.get(url)
+  .done(function( data ) {
+    handle(data)
   });
   return b
 }
 
-h = getJSON()
-
-$(document).ready(function(){
-  var app = new Vue({
-    el: '#app',
-    data: {
-      a: h[0],
-      word: getParameterByName("x")
-    }
-  });
-});
+getJSON();
