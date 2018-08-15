@@ -12,11 +12,15 @@ function getParameterByName(name) {
 
 
 function getJSON() {
-  url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
+  info = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
   var b = [];
-  $.get(url)
-  .done(function( data ) {
-    b.push(JSON.parse(data))
+  $.ajax({
+    async: false,
+    type: 'GET',
+    url: info,
+    success: function(data) {
+      b.push(JSON.parse(data))
+    }
   });
   return b
 }
