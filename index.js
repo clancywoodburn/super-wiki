@@ -22,7 +22,7 @@ function handle(d) {
 }
 
 function getJSON() {
-  url = "https://raw.githubusercontent.com/Clancy-W/super-wiki/master/data.json#"
+  url = "https://raw.githubusercontent.com/clancywoodburn/super-wiki/master/data.json#"
   var b = [];
   $.get(url)
   .done(function( data ) {
